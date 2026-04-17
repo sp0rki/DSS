@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midnight Vibes Live – 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-light:#E8C97A;
+  --gold-dim:#8A6F30;
+  --black:#080808;
+  --deep:#0E0E0E;
+  --surface:#141414;
+  --surface2:#1C1C1C;
+  --muted:#888;
+  --text:#E8E4DC;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Rajdhani',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(8,8,8,.95) 0%,transparent 100%);backdrop-filter:blur(4px)}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:.45rem 1.4rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1px;background:var(--gold)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,8,8,.97);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text);text-decoration:none;font-size:1.8rem;font-family:var(--serif);font-weight:300;letter-spacing:.1em}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--gold);font-size:2rem;cursor:pointer}
+
+/* FLASH BANNER */
+.flash-banner{background:var(--gold);color:var(--black);text-align:center;padding:.55rem 1rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;font-family:var(--sans)}
+
+/* HERO */
+#home{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#1a1408 0%,#080808 70%);z-index:0}
+.hero-bg::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 20% 80%,rgba(201,168,76,.06) 0%,transparent 50%),
+  radial-gradient(circle at 80% 20%,rgba(201,168,76,.04) 0%,transparent 50%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;z-index:0}
+.hero-content{position:relative;z-index:1;padding:2rem}
+.hero-eyebrow{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;justify-content:center}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:40px;height:1px;background:var(--gold-dim)}
+.hero-title{font-family:var(--serif);font-size:clamp(3.5rem,9vw,8rem);font-weight:300;line-height:1;letter-spacing:-.01em;color:#fff;margin-bottom:.3rem}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-subtitle{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2.2rem);font-weight:300;font-style:italic;color:var(--muted);margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:3rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}
+.hero-meta-item{text-align:center}
+.hero-meta-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);display:block;margin-bottom:.3rem}
+.hero-meta-value{font-size:1rem;letter-spacing:.08em;color:var(--text)}
+.hero-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);border:none;padding:.9rem 2.8rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:.9rem 2.8rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-outline:hover{background:rgba(201,168,76,.08)}
+
+/* COUNTDOWN */
+.countdown{display:flex;gap:2.5rem;justify-content:center;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(201,168,76,.15)}
+.countdown-item{text-align:center}
+.countdown-num{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:var(--gold);line-height:1;display:block}
+.countdown-lbl{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;display:block}
+
+/* SECTIONS */
+section{padding:7rem 3rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.section-tag::before{content:'';display:inline-block;width:30px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.1;color:#fff;margin-bottom:1.5rem}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-lead{font-size:1.05rem;color:var(--muted);max-width:620px;line-height:1.8}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.3),transparent);margin:5rem auto;max-width:800px}
+
+/* EVENT DETAILS */
+#event{background:var(--deep)}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3.5rem}
+.event-col{}
+.event-block{margin-bottom:2.5rem}
+.event-block-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.6rem}
+.event-block-value{font-size:1.05rem;color:var(--text);line-height:1.7}
+.event-block-value strong{color:var(--gold);font-weight:500}
+.map-wrap{border:1px solid rgba(201,168,76,.2);overflow:hidden;height:280px}
+.map-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(30%) contrast(1.1)}
+.transport-list{list-style:none;margin-top:.8rem}
+.transport-list li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.95rem;color:var(--muted);display:flex;gap:.8rem}
+.transport-list li::before{content:'→';color:var(--gold);flex-shrink:0}
+.settime{display:flex;align-items:center;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.settime-time{font-size:.8rem;color:var(--gold);letter-spacing:.1em;min-width:60px}
+.settime-act{font-size:.95rem;color:var(--text)}
+.settime-tag{font-size:.65rem;background:rgba(201,168,76,.15);color:var(--gold);padding:.2rem .6rem;letter-spacing:.1em;margin-left:auto}
+
+/* TICKETS */
+#tickets{background:var(--surface)}
+.ticket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.ticket-card{background:var(--surface2);border:1px solid rgba(201,168,76,.15);padding:2.2rem 1.8rem;position:relative;transition:border-color .3s}
+.ticket-card:hover{border-color:rgba(201,168,76,.4)}
+.ticket-card.featured{border-color:var(--gold)}
+.ticket-featured-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.3rem 1.2rem;font-weight:600;white-space:nowrap}
+.ticket-tier{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.8rem}
+.ticket-name{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:#fff;margin-bottom:.5rem}
+.ticket-price{font-size:2.2rem;font-weight:300;color:var(--gold);margin-bottom:.3rem;font-family:var(--serif)}
+.ticket-price span{font-size:.9rem;color:var(--muted)}
+.ticket-perks{list-style:none;margin:1.5rem 0;border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem}
+.ticket-perks li{padding:.4rem 0;font-size:.9rem;color:var(--muted);display:flex;gap:.7rem}
+.ticket-perks li::before{content:'✓';color:var(--gold);flex-shrink:0}
+.ticket-avail{font-size:.75rem;color:#e06060;letter-spacing:.1em;margin-bottom:1.2rem}
+.ticket-notes{margin-top:2.5rem;padding:1.5rem;background:rgba(201,168,76,.04);border-left:2px solid var(--gold-dim)}
+.ticket-notes p{font-size:.9rem;color:var(--muted);margin-bottom:.4rem}
+.ticket-notes p:last-child{margin-bottom:0}
+.ticket-notes strong{color:var(--text);font-weight:500}
+
+/* ARTIST */
+#artist{background:var(--black)}
+.artist-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.artist-img-wrap{position:relative}
+.artist-img-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a1408 0%,#0e0e0e 100%);border:1px solid rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;font-style:italic;color:var(--muted)}
+.artist-img-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:60%;height:60%;border:1px solid rgba(201,168,76,.2);z-index:-1}
+.artist-bio{font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:2rem}
+.artist-achievements{margin-bottom:2.5rem}
+.achievement-item{display:flex;gap:1rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.9rem;color:var(--muted)}
+.achievement-item::before{content:'◆';color:var(--gold);font-size:.5rem;margin-top:.45rem;flex-shrink:0}
+.music-embed-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin-bottom:2rem}
+.music-link{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;border:1px solid rgba(201,168,76,.2);text-decoration:none;color:var(--text);font-size:.85rem;transition:all .3s}
+.music-link:hover{border-color:var(--gold);color:var(--gold)}
+.music-icon{width:20px;height:20px;flex-shrink:0;fill:currentColor}
+.social-links{display:flex;gap:1rem;flex-wrap:wrap}
+.social-link{padding:.5rem 1.2rem;border:1px solid rgba(201,168,76,.25);color:var(--muted);text-decoration:none;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;transition:all .3s}
+.social-link:hover{border-color:var(--gold);color:var(--gold)}
+
+/* MEDIA */
+#media{background:var(--deep)}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.media-item{position:relative;overflow:hidden;cursor:pointer;background:var(--surface)}
+.media-item::after{content:attr(data-label);position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;background:linear-gradient(to top,rgba(8,8,8,.9),transparent);font-size:.75rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;transform:translateY(100%);transition:transform .3s}
+.media-item:hover::after{transform:translateY(0)}
+.media-item:hover .media-inner{transform:scale(1.04)}
+.media-inner{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1408,#0d0d0d);display:flex;align-items:center;justify-content:center;transition:transform .4s;font-family:var(--serif);font-size:.95rem;font-style:italic;color:rgba(201,168,76,.4);padding:2rem;text-align:center}
+.media-featured{grid-column:span 2;grid-row:span 2}
+.media-featured .media-inner{aspect-ratio:unset;height:100%}
+.hashtag-section{margin-top:2.5rem;padding:2rem;border:1px solid rgba(201,168,76,.15);text-align:center}
+.hashtag-section p{font-size:.85rem;color:var(--muted)}
+.hashtag{font-family:var(--serif);font-size:1.8rem;font-weight:300;font-style:italic;color:var(--gold);margin-top:.5rem}
+
+/* VENUE */
+#venue{background:var(--surface)}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.info-block{margin-bottom:2rem}
+.info-block h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--gold);margin-bottom:.8rem;letter-spacing:.05em}
+.info-block p,.info-block li{font-size:.95rem;color:var(--muted);line-height:1.8}
+.info-block ul{list-style:none}
+.info-block ul li{padding:.3rem 0;display:flex;gap:.8rem}
+.info-block ul li::before{content:'·';color:var(--gold)}
+.access-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+.access-badge{padding:.35rem .9rem;border:1px solid rgba(201,168,76,.3);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim)}
+.rules-list{list-style:none}
+.rules-list li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;color:var(--muted);display:flex;gap:.8rem}
+.rules-list li::before{content:'!';color:var(--gold);font-weight:600;width:14px;flex-shrink:0;text-align:center}
+
+/* NEWS */
+#news{background:var(--black)}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.news-card{border:1px solid rgba(201,168,76,.1);padding:1.8rem;transition:border-color .3s;position:relative}
+.news-card:hover{border-color:rgba(201,168,76,.3)}
+.news-date{font-size:.65rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:.8rem}
+.news-headline{font-family:var(--serif);font-size:1.15rem;font-weight:300;color:#fff;line-height:1.4;margin-bottom:.8rem}
+.news-body{font-size:.9rem;color:var(--muted);line-height:1.7}
+.news-tag{display:inline-block;margin-top:1rem;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:.1rem}
+
+/* FAQ */
+#faq{background:var(--deep)}
+.faq-list{margin-top:3rem;max-width:800px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-question{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:var(--sans);font-size:1rem;padding:1.4rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;letter-spacing:.02em}
+.faq-question:hover{color:var(--gold)}
+.faq-arrow{color:var(--gold);font-size:1.2rem;transition:transform .3s;flex-shrink:0}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-answer-inner{padding-bottom:1.4rem;font-size:.95rem;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-item.open .faq-answer{max-height:300px}
+
+/* CONTACT */
+#contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim)}
+.form-group input,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--text);padding:.8rem 1rem;font-family:var(--sans);font-size:.95rem;outline:none;resize:vertical;transition:border-color .3s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.newsletter{margin-top:2rem;padding:1.5rem;border:1px solid rgba(201,168,76,.2)}
+.newsletter h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:.5rem}
+.newsletter p{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
+.newsletter-form{display:flex;gap:.5rem}
+.newsletter-form input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--text);padding:.7rem 1rem;font-family:var(--sans);font-size:.9rem;outline:none}
+.newsletter-form input:focus{border-color:var(--gold)}
+.newsletter-form button{background:var(--gold);border:none;color:var(--black);padding:.7rem 1.2rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;cursor:pointer}
+.contact-info{}
+.contact-info-item{margin-bottom:2rem}
+.contact-info-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.4rem}
+.contact-info-value{font-size:1rem;color:var(--text)}
+.contact-info-value a{color:var(--gold);text-decoration:none}
+.contact-socials{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+.contact-social{width:42px;height:42px;border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.05em;transition:all .3s}
+.contact-social:hover{border-color:var(--gold);color:var(--gold)}
+.sponsors{margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06)}
+.sponsors-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.sponsor-logos{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.sponsor-logo{padding:.5rem 1.2rem;border:1px solid rgba(255,255,255,.08);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.1em}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid rgba(201,168,76,.15);padding:3rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:1.5rem;font-weight:300;font-style:italic;color:var(--gold);margin-bottom:1.5rem}
+.footer-nav{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;list-style:none}
+.footer-nav a{color:var(--muted);text-decoration:none;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-powered{font-size:.8rem;color:var(--muted);margin-bottom:.5rem}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
+
+/* SUCCESS MSG */
+.success-msg{display:none;padding:1rem;background:rgba(201,168,76,.1);border:1px solid var(--gold-dim);color:var(--gold);font-size:.9rem;text-align:center;margin-top:1rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  section{padding:5rem 1.5rem}
+  .event-grid,.artist-layout,.venue-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .ticket-grid{grid-template-columns:1fr;gap:1.5rem}
+  .news-grid{grid-template-columns:1fr;gap:1.5rem}
+  .media-grid{grid-template-columns:1fr 1fr}
+  .media-featured{grid-column:span 2}
+  .music-embed-grid{grid-template-columns:1fr}
+  .artist-img-accent{display:none}
+  .hero-meta{gap:1.5rem}
+  .countdown{gap:1.2rem}
+}
+@media(max-width:600px){
+  .media-grid{grid-template-columns:1fr}
+  .media-featured{grid-column:span 1}
+  .newsletter-form{flex-direction:column}
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .8s ease both}
+.hero-eyebrow{animation-delay:.1s}
+.hero-title{animation-delay:.25s}
+.hero-subtitle{animation-delay:.4s}
+.hero-meta{animation-delay:.55s}
+.hero-btns{animation-delay:.7s}
+.countdown{animation-delay:.85s}
+</style>
+</head>
+<body>
+
+<div class="flash-banner">⬥ VIP Tickets Selling Fast! — Limited Meet &amp; Greet Passes Available ⬥</div>
+
+<nav>
+  <a href="#home" class="nav-logo">Midnight Vibes</a>
+  <ul class="nav-links">
+    <li><a href="#event">Event</a></li>
+    <li><a href="#tickets">Tickets</a></li>
+    <li><a href="#artist">Artist</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#faq">FAQs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">Buy Tickets</button>
+  <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.add('open')" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="#event" onclick="document.getElementById('mobile-menu').classList.remove('open')">Event</a>
+  <a href="#tickets" onclick="document.getElementById('mobile-menu').classList.remove('open')">Tickets</a>
+  <a href="#artist" onclick="document.getElementById('mobile-menu').classList.remove('open')">Artist</a>
+  <a href="#media" onclick="document.getElementById('mobile-menu').classList.remove('open')">Media</a>
+  <a href="#news" onclick="document.getElementById('mobile-menu').classList.remove('open')">News</a>
+  <a href="#faq" onclick="document.getElementById('mobile-menu').classList.remove('open')">FAQs</a>
+  <a href="#contact" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" style="padding:0">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">One Night Only · Sydney 2025</div>
+    <h1 class="hero-title">Midnight<br><em>Vibes</em><br>Live</h1>
+    <p class="hero-subtitle">The Concert Experience of 2025</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-value">Saturday, 29 November 2025</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Venue</span>
+        <span class="hero-meta-value">Qudos Bank Arena, Sydney</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Doors Open</span>
+        <span class="hero-meta-value">6:00 PM</span>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#tickets" class="btn-primary">Buy Tickets Now</a>
+      <a href="#event" class="btn-outline">Event Details</a>
+    </div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><span class="countdown-lbl">Days</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-hrs">--</span><span class="countdown-lbl">Hours</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-min">--</span><span class="countdown-lbl">Minutes</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-sec">--</span><span class="countdown-lbl">Seconds</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EVENT DETAILS -->
+<section id="event">
+  <div class="section-inner">
+    <div class="section-tag">Event Details</div>
+    <h2 class="section-title">Everything You Need<br><em>to Know</em></h2>
+    <p class="section-lead">One night of pure musical energy at one of Australia's most iconic arenas. Here's all the information you need to make your night unforgettable.</p>
+    <div class="event-grid">
+      <div class="event-col">
+        <div class="event-block">
+          <div class="event-block-label">Date &amp; Time</div>
+          <div class="event-block-value">
+            <strong>Saturday, 29 November 2025</strong><br>
+            Doors open: 6:00 PM<br>
+            Show starts: 8:00 PM<br>
+            Estimated finish: 11:00 PM
+          </div>
+        </div>
+        <div class="event-block">
+          <div class="event-block-label">Venue</div>
+          <div class="event-block-value">
+            <strong>Qudos Bank Arena</strong><br>
+            Sydney Olympic Park, NSW 2127<br>
+            Capacity: 21,000
+          </div>
+        </div>
+        <div class="event-block">
+          <div class="event-block-label">Set Times</div>
+          <div class="settime"><span class="settime-time">6:30 PM</span><span class="settime-act">Doors Open</span></div>
+          <div class="settime"><span class="settime-time">7:00 PM</span><span class="settime-act">DJ Opening Set</span><span class="settime-tag">Support</span></div>
+          <div class="settime"><span class="settime-time">7:45 PM</span><span class="settime-act">The Echoes</span><span class="settime-tag">Support</span></div>
+          <div class="settime"><span class="settime-time">8:00 PM</span><span class="settime-act">Midnight Vibes</span><span class="settime-tag">Headline</span></div>
+        </div>
+        <div class="event-block" style="margin-top:1.5rem">
+          <div class="event-block-label">About the Show</div>
+          <div class="event-block-value" style="font-size:.95rem;color:var(--muted);line-height:1.8">An immersive journey through dark R&amp;B, neo-soul, and indie pop. Expect stunning visuals, a 20-piece live band, and surprise guests. This is the largest Australian headline show to date, featuring tracks from all four albums including hits from the double-platinum debut <em style="color:var(--gold)">After Midnight</em>.</div>
+        </div>
+      </div>
+      <div class="event-col">
+        <div class="event-block">
+          <div class="event-block-label">Venue Map</div>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.0!2d151.0687!3d-33.8469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bcb1c4ef0cfd%3A0x504f0b535df52d0!2sQudos%20Bank%20Arena!5e0!3m2!1sen!2sau!4v1699000000000!5m2!1sen!2sau" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="event-block" style="margin-top:1.5rem">
+          <div class="event-block-label">Getting There</div>
+          <ul class="transport-list">
+            <li>Train: Olympic Park Station (direct from Central)</li>
+            <li>Bus: Multiple routes to Sydney Olympic Park</li>
+            <li>Ride Share: Drop-off zone on Edwin Flack Ave</li>
+            <li>Taxi: Designated rank on Australia Ave</li>
+          </ul>
+        </div>
+        <div class="event-block">
+          <div class="event-block-label">Parking</div>
+          <div class="event-block-value" style="font-size:.95rem;color:var(--muted)">On-site parking available at Sydney Olympic Park. Pre-booking strongly recommended. Visit <a href="https://www.sydneyolympicpark.com.au" target="_blank" style="color:var(--gold)">sydneyolympicpark.com.au</a> to reserve your spot.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TICKETS -->
+<section id="tickets">
+  <div class="section-inner">
+    <div class="section-tag">Tickets</div>
+    <h2 class="section-title">Secure Your<br><em>Place in the Night</em></h2>
+    <p class="section-lead">Choose the experience that's right for you. All tickets include GST. Booking fees may apply via the ticket provider.</p>
+    <div class="ticket-grid">
+      <div class="ticket-card">
+        <div class="ticket-tier">Tier 01</div>
+        <div class="ticket-name">General Admission</div>
+        <div class="ticket-price">$89 <span>from / GST inc.</span></div>
+        <ul class="ticket-perks">
+          <li>Standing floor access</li>
+          <li>Full show access</li>
+          <li>Standard entry queue</li>
+          <li>All ages welcome</li>
+        </ul>
+        <a href="https://www.ticketek.com.au" target="_blank" class="btn-primary" style="display:block;text-align:center;font-size:.75rem">Buy Now via Ticketek</a>
+      </div>
+      <div class="ticket-card featured">
+        <div class="ticket-featured-badge">Most Popular</div>
+        <div class="ticket-tier">Tier 02</div>
+        <div class="ticket-name">VIP Package</div>
+        <div class="ticket-price">$199 <span>from / GST inc.</span></div>
+        <ul class="ticket-perks">
+          <li>Priority early entry</li>
+          <li>VIP lounge access</li>
+          <li>Exclusive tour merch pack</li>
+          <li>Premium viewing area</li>
+          <li>Complimentary welcome drink</li>
+        </ul>
+        <a href="https://www.ticketek.com.au" target="_blank" class="btn-primary" style="display:block;text-align:center;font-size:.75rem">Buy Now via Ticketek</a>
+      </div>
+      <div class="ticket-card">
+        <div class="ticket-tier">Tier 03</div>
+        <div class="ticket-name">Meet &amp; Greet</div>
+        <div class="ticket-price">$299 <span>GST inc.</span></div>
+        <div class="ticket-avail">⬥ Limited availability</div>
+        <ul class="ticket-perks">
+          <li>Pre-show meet &amp; greet</li>
+          <li>Professional photo</li>
+          <li>Signed merch item</li>
+          <li>VIP all inclusions</li>
+          <li>Exclusive soundcheck access</li>
+        </ul>
+        <a href="https://www.ticketek.com.au" target="_blank" class="btn-primary" style="display:block;text-align:center;font-size:.75rem">Buy Now via Ticketek</a>
+      </div>
+    </div>
+    <div class="ticket-notes">
+      <p><strong>All-ages event.</strong> Under 18s must be accompanied by a parent or guardian. Licensed bar areas require valid ID (18+).</p>
+      <p><strong>Refund Policy:</strong> As per Ticketek's standard terms and conditions. Refunds available for cancelled events.</p>
+      <p><strong>Ticket transfer:</strong> Tickets are non-transferable and must match ID at the door. No paper tickets — mobile entry only.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ARTIST -->
+<section id="artist">
+  <div class="section-inner">
+    <div class="section-tag">Artist</div>
+    <h2 class="section-title">The Headline<br><em>Act</em></h2>
+    <div class="artist-layout">
+      <div class="artist-img-wrap">
+        <div class="artist-img-placeholder">Artist Photo<br>Coming Soon</div>
+        <div class="artist-img-accent"></div>
+      </div>
+      <div>
+        <p class="artist-bio">Born in the heart of Sydney's west, Midnight Vibes is the electrifying solo project of multi-instrumentalist and producer Alex Vane. Blending dark R&amp;B atmospherics with neo-soul grooves and indie pop hooks, their sound has redefined Australia's contemporary music landscape over the past five years.</p>
+        <p class="artist-bio">With four studio albums under their belt — including the double-platinum <em style="color:var(--gold)">After Midnight</em> and the critically acclaimed <em style="color:var(--gold)">Neon Silence</em> — Vane has cemented a reputation for visceral live performances that leave audiences breathless.</p>
+        <div class="artist-achievements">
+          <div class="achievement-item">4× ARIA Award nominee, including Best Pop Release 2023</div>
+          <div class="achievement-item">2 Platinum, 1 Gold certified studio albums</div>
+          <div class="achievement-item">Over 800 million streams across all platforms</div>
+          <div class="achievement-item">Triple J Hottest 100 #1 — "Glass Hours" (2022)</div>
+          <div class="achievement-item">Sold-out Australian and New Zealand tours 2022, 2024</div>
+        </div>
+        <div class="music-embed-grid">
+          <a href="https://open.spotify.com" target="_blank" class="music-link">
+            <svg class="music-icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify
+          </a>
+          <a href="https://music.apple.com" target="_blank" class="music-link">
+            <svg class="music-icon" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208A4.98 4.98 0 00.05 4.822C.017 5.142 0 5.466 0 5.79v12.387c.01.15.017.302.026.454.06.765.14 1.508.419 2.21.53 1.337 1.452 2.3 2.78 2.867.413.174.85.276 1.293.323.325.033.651.05.977.05h12.345c.326 0 .652-.017.977-.50.444-.047.88-.149 1.293-.323 1.328-.567 2.25-1.53 2.78-2.867.279-.702.36-1.445.419-2.21.009-.152.016-.303.026-.454V5.79c0-.324-.016-.648-.05-.972a9.23 9.23 0 00-.24-2.694z"/></svg>
+            Apple Music
+          </a>
+          <a href="https://youtube.com" target="_blank" class="music-link">
+            <svg class="music-icon" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            YouTube
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">TikTok</a>
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Official Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="section-inner">
+    <div class="section-tag">Media &amp; Gallery</div>
+    <h2 class="section-title">See the<br><em>Energy</em></h2>
+    <p class="section-lead">A glimpse into the world of Midnight Vibes Live. Photos, footage, and fan moments from across the tour.</p>
+    <div class="media-grid">
+      <div class="media-item media-featured" data-label="View Promo Reel">
+        <div class="media-inner" style="font-size:1.4rem">▶ Official Tour Trailer<br><span style="font-size:.85rem;margin-top:.5rem;display:block">Midnight Vibes Live 2025</span></div>
+      </div>
+      <div class="media-item" data-label="Melbourne Night 1">
+        <div class="media-inner">Promo Photo 01</div>
+      </div>
+      <div class="media-item" data-label="Brisbane Night 2">
+        <div class="media-inner">Promo Photo 02</div>
+      </div>
+      <div class="media-item" data-label="Perth Show">
+        <div class="media-inner">Promo Photo 03</div>
+      </div>
+      <div class="media-item" data-label="Sydney Announcement">
+        <div class="media-inner">Promo Photo 04</div>
+      </div>
+    </div>
+    <div class="hashtag-section">
+      <p>Share your experience and be featured</p>
+      <div class="hashtag">#MidnightVibesAU</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VENUE -->
+<section id="venue">
+  <div class="section-inner">
+    <div class="section-tag">Venue Info</div>
+    <h2 class="section-title">Plan Your<br><em>Visit</em></h2>
+    <p class="section-lead">Everything you need to know about Qudos Bank Arena to make your night seamless from arrival to departure.</p>
+    <div class="venue-grid">
+      <div>
+        <div class="info-block">
+          <h3>Address &amp; Directions</h3>
+          <p>Qudos Bank Arena<br>Olympic Blvd, Sydney Olympic Park NSW 2127</p>
+          <ul style="margin-top:.8rem">
+            <li>By Train: Olympic Park Station (T3 line, alight at Olympic Park)</li>
+            <li>By Bus: Routes 526, 525 from Parramatta</li>
+            <li>By Car: Follow Olympic Park signage from M4 or Parramatta Road</li>
+            <li>Walk: 5 min from Olympic Park Station</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h3>Parking</h3>
+          <p>Multiple car parks available across Sydney Olympic Park precinct. Pre-booking strongly recommended — event nights sell out early. Visit <a href="https://www.sydneyolympicpark.com.au" target="_blank" style="color:var(--gold)">sydneyolympicpark.com.au</a> for current availability and rates.</p>
+        </div>
+        <div class="info-block">
+          <h3>Accessibility</h3>
+          <div class="access-badges">
+            <span class="access-badge">Wheelchair Access</span>
+            <span class="access-badge">Companion Tickets</span>
+            <span class="access-badge">Hearing Loop</span>
+            <span class="access-badge">Accessible Toilets</span>
+          </div>
+          <p style="margin-top:.8rem;font-size:.9rem;color:var(--muted)">Contact us for specific accessibility requirements. Companion tickets available at no charge with proof of disability.</p>
+        </div>
+      </div>
+      <div>
+        <div class="info-block">
+          <h3>Entry Rules &amp; Prohibited Items</h3>
+          <ul class="rules-list">
+            <li>Bags must not exceed 30cm × 20cm × 10cm</li>
+            <li>No professional cameras or recording equipment</li>
+            <li>No outside food or beverages</li>
+            <li>No glass containers of any kind</li>
+            <li>No umbrellas or laser pointers</li>
+            <li>No weapons or dangerous items</li>
+            <li>Valid photo ID required for licensed areas (18+)</li>
+            <li>Re-entry is not permitted once you have exited</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h3>At the Venue</h3>
+          <ul>
+            <li>Food and beverage available throughout the venue</li>
+            <li>Official merch stands open from doors</li>
+            <li>First aid stations at every concourse level</li>
+            <li>Lost property collected at main information desk</li>
+            <li>ATMs available at concourse level 2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="section-inner">
+    <div class="section-tag">Latest News</div>
+    <h2 class="section-title">Announcements<br><em>&amp; Updates</em></h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-date">15 October 2025</div>
+        <div class="news-headline">Sydney Show — Final Tickets Available</div>
+        <div class="news-body">With just weeks to go, only a limited number of General Admission and VIP tickets remain for the Sydney headline show. Don't miss your chance to be part of this historic night.</div>
+        <span class="news-tag">Tickets</span>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2 October 2025</div>
+        <div class="news-headline">Melbourne Show Added — February 2026</div>
+        <div class="news-body">Due to overwhelming demand, a Melbourne show at Rod Laver Arena has been announced for 14 February 2026. Pre-sale begins 7 October for newsletter subscribers.</div>
+        <span class="news-tag">New Date</span>
+      </div>
+      <div class="news-card">
+        <div class="news-date">20 September 2025</div>
+        <div class="news-headline">Special Guests &amp; Support Acts Confirmed</div>
+        <div class="news-body">Sydney-based neo-soul duo The Echoes join as direct support. DJ Palms opens proceedings at 7:00 PM. An unmissable night of Australian musical talent.</div>
+        <span class="news-tag">Lineup</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQs</div>
+    <h2 class="section-title">Frequently Asked<br><em>Questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is the event all-ages?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, the event is all-ages. Attendees under 18 must be accompanied by a parent or guardian. Licensed bar areas are strictly 18+ with valid photo ID required.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I bring my own food or drink?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No outside food or beverages are permitted. A wide range of food and drink options are available inside the venue, including vegetarian and vegan choices.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What's the bag policy?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Bags must not exceed 30cm × 20cm × 10cm. All bags are subject to search on entry. Clear bags are recommended for faster entry. Large backpacks, suitcases, and luggage will not be admitted.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is re-entry allowed?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Re-entry is not permitted once you have exited the venue. Please plan accordingly and ensure you have everything you need before entering.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What ID is accepted for licensed areas?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Accepted ID includes Australian driver's licence, passport, or NSW Photo Card. Proof of age cards from other states are also accepted. Digital licences on your phone are accepted at this venue.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is there wheelchair seating?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Qudos Bank Arena has designated wheelchair viewing areas at multiple levels. Companion tickets are available at no charge. Please contact us in advance so we can ensure the best experience for you.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What if the event is postponed or cancelled?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">In the event of cancellation, all tickets will be refunded in full. If the event is postponed, your ticket will remain valid for the new date. You will be contacted directly by Ticketek with further instructions.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I take photos at the show?<span class="faq-arrow">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Personal phone photography is welcome. Professional cameras, detachable lenses, and recording equipment are strictly prohibited. Flash photography may be restricted during certain parts of the set.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Contact &amp; Connect</div>
+    <h2 class="section-title">Get in<br><em>Touch</em></h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="form-name" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="form-email" placeholder="jane@email.com">
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" id="form-subject" placeholder="Ticket enquiry, accessibility, general">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="form-msg" rows="5" placeholder="Your message here..."></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitForm()" style="align-self:flex-start">Send Message</button>
+          <div class="success-msg" id="form-success">Thanks! We'll get back to you within 48 hours.</div>
+        </div>
+        <div class="newsletter" style="margin-top:2rem">
+          <h3>Stay in the Loop</h3>
+          <p>Be first for presales, exclusive content, and announcements.</p>
+          <div class="newsletter-form">
+            <input type="email" id="nl-email" placeholder="Enter your email">
+            <button onclick="subscribeNewsletter()">Subscribe</button>
+          </div>
+          <div class="success-msg" id="nl-success" style="margin-top:.8rem">You're on the list!</div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-label">General Enquiries</div>
+          <div class="contact-info-value"><a href="mailto:hello@midnightvibes.com.au">hello@midnightvibes.com.au</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Media &amp; Press</div>
+          <div class="contact-info-value"><a href="mailto:press@midnightvibes.com.au">press@midnightvibes.com.au</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Ticket Support</div>
+          <div class="contact-info-value">Via <a href="https://www.ticketek.com.au" target="_blank">Ticketek.com.au</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Accessibility Requests</div>
+          <div class="contact-info-value"><a href="mailto:access@midnightvibes.com.au">access@midnightvibes.com.au</a></div>
+        </div>
+        <div class="contact-socials">
+          <a href="#" class="contact-social">IG</a>
+          <a href="#" class="contact-social">FB</a>
+          <a href="#" class="contact-social">TT</a>
+          <a href="#" class="contact-social">YT</a>
+        </div>
+        <div class="sponsors">
+          <div class="sponsors-label">Partners &amp; Sponsors</div>
+          <div class="sponsor-logos">
+            <div class="sponsor-logo">TRIPLE J</div>
+            <div class="sponsor-logo">NOVA FM</div>
+            <div class="sponsor-logo">MUSIC NSW</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Midnight Vibes Live</div>
+  <ul class="footer-nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#tickets">Tickets</a></li>
+    <li><a href="#event">Event</a></li>
+    <li><a href="#artist">Artist</a></li>
+    <li><a href="#faq">FAQs</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#">Terms &amp; Conditions</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+  </ul>
+  <p class="footer-powered">Tickets powered by <a href="https://www.ticketek.com.au" target="_blank" style="color:var(--gold)">Ticketek</a></p>
+  <p class="footer-copy">© 2025 Midnight Vibes Live. All rights reserved. ABN 12 345 678 901</p>
+</footer>
+
+<script>
+// Countdown
+function updateCountdown(){
+  var target=new Date('2025-11-29T20:00:00+11:00');
+  var now=new Date();
+  var diff=target-now;
+  if(diff<=0){document.getElementById('countdown').innerHTML='<p style="color:var(--gold);font-family:var(--serif);font-style:italic;font-size:1.5rem">The show is tonight!</p>';return;}
+  var days=Math.floor(diff/86400000);
+  var hrs=Math.floor((diff%86400000)/3600000);
+  var min=Math.floor((diff%3600000)/60000);
+  var sec=Math.floor((diff%60000)/1000);
+  document.getElementById('cd-days').textContent=String(days).padStart(2,'0');
+  document.getElementById('cd-hrs').textContent=String(hrs).padStart(2,'0');
+  document.getElementById('cd-min').textContent=String(min).padStart(2,'0');
+  document.getElementById('cd-sec').textContent=String(sec).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// FAQ
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open')});
+  if(!isOpen)item.classList.add('open');
+}
+
+// Form
+function submitForm(){
+  var n=document.getElementById('form-name').value;
+  var e=document.getElementById('form-email').value;
+  var m=document.getElementById('form-msg').value;
+  if(!n||!e||!m){alert('Please fill in your name, email, and message.');return;}
+  document.getElementById('form-success').style.display='block';
+  document.getElementById('form-name').value='';
+  document.getElementById('form-email').value='';
+  document.getElementById('form-subject').value='';
+  document.getElementById('form-msg').value='';
+}
+
+// Newsletter
+function subscribeNewsletter(){
+  var e=document.getElementById('nl-email').value;
+  if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}
+  document.getElementById('nl-success').style.display='block';
+  document.getElementById('nl-email').value='';
+}
+</script>
+</body>
+</html>
